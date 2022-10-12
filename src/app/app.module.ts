@@ -5,6 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CarsappComponent } from './carsapp/carsapp.component';
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+const appRoutes:Routes=[
+  {
+    path:"",component:CarsappComponent
+  },
+  
+]
+
 
 @NgModule({
   declarations: [
@@ -14,7 +23,9 @@ import { CarsappComponent } from './carsapp/carsapp.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
